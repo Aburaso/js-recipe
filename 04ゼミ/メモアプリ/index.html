@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WebExpertコーステンプレート</title>
+  </head>
+  <body>
+    <h2>メモアプリ</h2>
+    <input type="text" id="memo-input" />
+    <button id="add-button">保存</button>
+    <div id="memo-container">こんにちは</div>
+    <script>
+      const memoInput = document.getElementById("memo-input");
+      const addButton = document.getElementById("add-button");
+      const memoContainer = document.getElementById("memo-container");
+      addButton.onclick = function () {
+        // input に 入力した 内容を 定数 text に 入れる
+        // console.dir(memoInput);
+        const text = memoInput.value;
+
+        const div = document.createElement("dir");
+        div.textContent = text;
+
+        memoContainer.append(div);
+        const value = document.createElement("div");
+        value.textContent = "text";
+        memoContainer.append(value);
+      };
+    </script>
+  </body>
+</html>
