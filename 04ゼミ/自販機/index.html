@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>自販機</title>
+  </head>
+
+  <body>
+    <h1>自販機</h1>
+    
+     <h2>自販機にお金を入れる</h2>
+    <section>
+      <button id="button100">100円入れる</button>
+        <h2>↓財布↓</h2>
+        <div id="saifu-display">1000</div>
+        <p>
+        <h2 id="money">↓投入金額↓</h2>
+        </p>
+        <div id="moneyR">0</div>
+      <h3>商品を買う</h3>
+  
+      <button id="buy-button-tea">お茶(100円)</button>
+      <h3 id="result">買った商品</h3>
+
+    
+      <div id="display-items"></div>
+    </section>
+
+    <script>
+    // HTML要素を取得する
+      const buyButtonTea = document.getElementById("buy-button-tea")
+      const displayItems = document.getElementById("display-items")
+      const saifuDisplay = document.getElementById("saifu-display")
+      const moneyR = document.getElementById("moneyR")
+      const button100 = document.getElementById("button100")
+
+      let saifu = 1000
+      let jihankiMoney = 0
+      
+			
+      // buyButtonTea を押した時の処理
+      buyButtonTea.onclick = function() {
+        if (jihankiMoney >= 100) {
+        jihankiMoney -= 100
+        moneyR.textContent = jihankiMoney;
+        displayItems.textContent += "🍵"
+        }
+      }
+
+      //100button　を押した時の処理
+      button100.onclick = function(){
+        if(saifu >= 100){
+        saifu -= 100
+        saifuDisplay.textContent = saifu;
+        jihankiMoney += 100
+        moneyR.textContent = jihankiMoney;
+        }
+
+      }
+      
+     
+      
+    </script>
+  </body>
+</html>
